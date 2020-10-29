@@ -1,0 +1,17 @@
+.editable-title input[type='button'] {
+    border-color: transparent;
+    background: transparent;
+    font-size: 6px;
+    white-space: normal;
+    text-align: left;
+    cursor: initial;
+}
+
+label {
+
+    font-size: 6px;
+}
+.css-4ec9ia-singleValue {
+    color: hsl(0,0%,20%);
+    font-size: 6px;
+}
