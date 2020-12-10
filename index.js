@@ -11,7 +11,7 @@ const config = {
   user: "sa",
   password: "12_Sylvester",
   server: "localhost",
-  database: "eula",
+  database: "euda",
   options: {
     enableArithAbort: true,
   },
@@ -21,7 +21,7 @@ var server = app.listen(8081, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log("app listening at http://%s:%s", host, port);
+  console.log("app listening at http://"+ host, port);
 });
 
 app.get("/all_employees", function (req, res) {
@@ -106,6 +106,7 @@ app.post("/liabilityStagingSet", function (req, res) {
       asset_serial: req.body.asset_serial,
       export_flag: req.body.export_flag
     }
+
     var parameters = [
       { name: 'transaction_code', sqltype: sql.NVarChar, value: req.body.transaction_code },
       { name: 'request_number', sqltype: sql.NVarChar, value: req.body.request_number },
