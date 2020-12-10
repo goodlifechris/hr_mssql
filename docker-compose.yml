@@ -8,3 +8,19 @@ services:
     environment:
       SA_PASSWORD: "12_Sylvester"
       ACCEPT_EULA: "Y"
+    networks:
+            - webappnetwork
+    links:
+       - api-app
+  api-app:
+           container_name:  api-app
+           image: image/api-app  
+           restart: always
+           build: .
+           ports:
+             - "7500:7500"
+           networks:
+            - webappnetwork
+networks:
+    webappnetwork:
+        driver: bridge
