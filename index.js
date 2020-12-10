@@ -17,15 +17,12 @@ const config = {
   },
 };
 
-// Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
+var server = app.listen(8081, function () {
+  var host = server.address().address;
+  var port = server.address().port;
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
+  console.log("app listening at http://"+ host, port);
 });
-
-app.listen(PORT, HOST);
 
 app.get("/all_employees", function (req, res) {
   sql.connect(config, function () {
